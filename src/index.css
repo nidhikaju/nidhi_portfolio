@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ai-dark: #0a0a0f;
+  --color-ai-accent: #22d3ee;
+  --color-ai-purple: #8b5cf6;
+  --color-ai-green: #10b981;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-ai-dark);
+    color: #e2e8f0;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(30, 41, 59, 1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .glow-text {
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right, var(--color-ai-accent), var(--color-ai-purple));
+  }
+
+  /* 3D Flip Utilities */
+  .perspective-\[1000px\] {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .group:hover .group-hover\:rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
